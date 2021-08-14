@@ -6,6 +6,7 @@ import State, { StateType } from './state';
 
 interface ContextProviderProps {
   board: BoardType;
+  dictionary: string[];
 }
 interface ContextActionProps {
   clickItem: (indexRow: number, indexColumn: number) => void;
@@ -20,8 +21,10 @@ export const BoardContext = createContext<[StateType, ContextActionProps]>([
 export const BoardContextProvider: FunctionComponent<ContextProviderProps> = ({
   children,
   board,
+  dictionary,
 }) => {
   State.board = board;
+  State.dictionary = dictionary;
   const [state, setState] = useState(State);
 
   const clickItem = (indexRow: number, indexColumn: number) => {

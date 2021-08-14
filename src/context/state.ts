@@ -5,6 +5,7 @@ export interface StateType {
   lastIndexRow: any;
   lastindexColumn: any;
   letters: string[];
+  dictionary: string[];
 }
 
 const State: StateType = {
@@ -14,6 +15,7 @@ const State: StateType = {
   lastIndexRow: null,
   lastindexColumn: null,
   letters: [],
+  dictionary: [],
 };
 
 export default State;
