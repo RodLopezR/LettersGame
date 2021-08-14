@@ -5,7 +5,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "BUILD_PATH='./docs' react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --ci --coverage --watchAll=false",
+    "test:watch": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
     "prettier": "./node_modules/.bin/prettier --write ."
   },
@@ -30,6 +31,24 @@
       "react-app/jest"
     ]
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "!<rootDir>/src/index.tsx",
+      "!<rootDir>/src/reportWebVitals.ts",
+      "!<rootDir>/src/react-app-env.d.ts",
+      "!<rootDir>/src/types/**",
+      "!<rootDir>/src/**/*.snap",
+      "!<rootDir>/src/**/*.json"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": -10
+      }
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -41,5 +60,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.9",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2"
   }
 }

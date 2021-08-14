@@ -10,7 +10,7 @@ const DisplayerComponent: FunctionComponent = () => {
   return (
     <div className={Styles.container}>
       <div>
-        <button className={Styles.button} onClick={clearAll}>
+        <button id="btn-clear" className={Styles.button} onClick={clearAll}>
           Clear all
         </button>
       </div>

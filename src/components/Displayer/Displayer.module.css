@@ -8,7 +8,10 @@
   border: 2px solid gray;
   padding: 10px;
   max-width: 400px;
+  min-width: 250px;
+  width: 80%;
   position: relative;
+  text-align: left;
 }
 
 .button {
@@ -38,8 +41,9 @@
 @media (max-width: 900px) {
   .container {
     width: 100%;
+    display: grid !important;
+    place-content: center;
     text-align: center;
-    display: block;
   }
 }
 

@@ -33,6 +33,7 @@ const BoxComponent: FunctionComponent<BoxProps> = ({
     <div
       className={clsx(
         Styles.box,
+        'box-item',
         'noSelectUI',
         box.selected ? Styles.selected : '',
         box.clickeable && !box.selected && letters.length > 0
