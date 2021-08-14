@@ -1,7 +1,7 @@
-import BoxType from "./BoxType";
+import BoxType from './BoxType';
 
 interface RowBoxType {
-    items: BoxType[];
+  items: BoxType[];
 }
 
 export default RowBoxType;

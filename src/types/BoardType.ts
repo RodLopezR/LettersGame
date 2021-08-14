@@ -1,7 +1,7 @@
-import RowBoxType from "./RowBoxType";
+import RowBoxType from './RowBoxType';
 
 interface BoardType {
-    items: RowBoxType[];
+  items: RowBoxType[];
 }
 
 export default BoardType;

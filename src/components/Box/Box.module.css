@@ -1,5 +1,5 @@
 .box {
-  background: linear-gradient(#F4505E, #9E061B);
+  background: linear-gradient(#f4505e, #9e061b);
   display: inline-block;
   width: 90px;
   height: 90px;
@@ -14,7 +14,7 @@
 }
 
 .text {
-  background: linear-gradient(#F9CB57, #F68128);
+  background: linear-gradient(#f9cb57, #f68128);
   height: 90px;
   display: grid;
   place-items: center center;
@@ -30,11 +30,11 @@
 }
 
 .selected {
-  background: linear-gradient(#AFE84E, #5AA52B);
+  background: linear-gradient(#afe84e, #5aa52b);
 }
 
-.selected > .text{
-  background: linear-gradient(#AFE84E, #5AA52B);
+.selected > .text {
+  background: linear-gradient(#afe84e, #5aa52b);
 }
 
 .selected:hover {
@@ -46,11 +46,11 @@
 }
 
 .clickeable {
-  background: linear-gradient(#61AAD2, #5895B9);
+  background: linear-gradient(#61aad2, #5895b9);
 }
 
-.clickeable > .text{
-  background: linear-gradient(#61AAD2, #5895B9);
+.clickeable > .text {
+  background: linear-gradient(#61aad2, #5895b9);
 }
 
 .clickeable:hover {
