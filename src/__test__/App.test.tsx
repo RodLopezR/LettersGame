@@ -1,7 +1,7 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from '../app/App';
 import { mount } from 'enzyme';
+
+import App from '../app/App';
 
 describe('Normal render and click', () => {
   test('renders learn react link', () => {

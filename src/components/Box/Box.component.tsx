@@ -1,8 +1,9 @@
-import clsx from 'clsx';
 import { FunctionComponent, useContext } from 'react';
 import { BoardContext } from '../../context/context';
-import BoxType from '../../types/BoxType';
+
+import clsx from 'clsx';
 import Styles from './Box.module.css';
+import BoxType from '../../types/BoxType';
 
 interface BoxProps {
   box: BoxType;

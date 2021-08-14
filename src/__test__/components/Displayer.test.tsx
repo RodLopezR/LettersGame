@@ -1,6 +1,4 @@
 import { mount } from 'enzyme';
-
-import BoxType from '../../types/BoxType';
 import Displayer from '../../components/Displayer';
 import { BoardContext } from '../../context/context';
 import { StateType } from '../../context/state';
