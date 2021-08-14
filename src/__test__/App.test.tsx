@@ -10,22 +10,17 @@ describe('Normal render and click', () => {
     expect(linkElement).toBeInTheDocument();
   });
   test('Normal render and click', () => {
-    const oAppRendered = mount(
-      <App />
-    )
+    const oAppRendered = mount(<App />);
 
-    const lBoxes = oAppRendered.find(".box-item");
+    const lBoxes = oAppRendered.find('.box-item');
 
-    const oClear = oAppRendered.find("#btn-clear");
+    const oClear = oAppRendered.find('#btn-clear');
 
     expect(lBoxes).not.toBeNull();
     expect(oClear).not.toBeNull();
 
-    lBoxes.at(5).simulate("click");
-    lBoxes.at(6).simulate("click");
-    oClear.simulate("click");
-
-    
+    lBoxes.at(5).simulate('click');
+    lBoxes.at(6).simulate('click');
+    oClear.simulate('click');
   });
-  
 });

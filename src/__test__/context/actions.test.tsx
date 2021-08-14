@@ -12,7 +12,7 @@ describe('BoxComponent tests', () => {
       lastIndexRow: null,
       lastindexColumn: null,
       letters: [],
-    }
+    };
 
     const oResponse = ClickInBlock(state, 1, 1);
     expect(oResponse).not.toBeNull();
@@ -26,7 +26,7 @@ describe('BoxComponent tests', () => {
       lastIndexRow: null,
       lastindexColumn: null,
       letters: [],
-    }
+    };
 
     const oResponse = ClearAll(state);
     expect(oResponse).not.toBeNull();

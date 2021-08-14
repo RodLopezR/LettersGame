@@ -5,6 +5,7 @@ import BoxContainer from '../components/BoxContainer/BoxContainer.component';
 import DisplayerComponent from '../components/Displayer';
 import HeaderComponent from '../components/Header';
 import Footer from '../components/Footer';
+import RulesComponent from '../components/Rules';
 
 function App() {
   const board = GetBoardData();
@@ -14,6 +15,7 @@ function App() {
       <HeaderComponent />
       <BoxContainer />
       <DisplayerComponent />
+      <RulesComponent />
       <Footer />
     </BoardContextProvider>
   );

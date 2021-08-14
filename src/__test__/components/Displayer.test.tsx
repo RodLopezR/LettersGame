@@ -10,13 +10,13 @@ describe('Displayer tests', () => {
       clickItem: jest.fn(),
       clearAll: jest.fn(),
     };
-    const stateMock:StateType = {
+    const stateMock: StateType = {
       board: GetBoardData(),
       dictionary: GetDictionary(),
       letters: [],
       lastindexColumn: null,
       lastIndexRow: null,
-    }
+    };
 
     const oMounted = mount(
       <BoardContext.Provider value={[stateMock, actionsMock]}>
@@ -33,13 +33,13 @@ describe('Displayer tests', () => {
       clickItem: jest.fn(),
       clearAll: jest.fn(),
     };
-    const stateMock:StateType = {
+    const stateMock: StateType = {
       board: GetBoardData(),
       dictionary: GetDictionary(),
-      letters: ["a", "V"],
+      letters: ['a', 'V'],
       lastindexColumn: null,
       lastIndexRow: null,
-    }
+    };
 
     const oMounted = mount(
       <BoardContext.Provider value={[stateMock, actionsMock]}>
@@ -56,13 +56,13 @@ describe('Displayer tests', () => {
       clickItem: jest.fn(),
       clearAll: jest.fn(),
     };
-    const stateMock:StateType = {
+    const stateMock: StateType = {
       board: GetBoardData(),
       dictionary: GetDictionary(),
-      letters: ["F", "A", "T"],
+      letters: ['F', 'A', 'T'],
       lastindexColumn: null,
       lastIndexRow: null,
-    }
+    };
 
     const oMounted = mount(
       <BoardContext.Provider value={[stateMock, actionsMock]}>

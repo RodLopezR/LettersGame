@@ -9,7 +9,7 @@ import { BoardContext } from '../../context/context';
 describe('BoxComponent tests', () => {
   test('Normal render and click', () => {
     const box: BoxType = {
-      letter: "A",
+      letter: 'A',
       clickeable: false,
       selected: false,
     };
@@ -17,18 +17,18 @@ describe('BoxComponent tests', () => {
     const indexColumn = 1;
 
     const oMounted = mount(
-      <BoxComponent box={box} indexRow={indexRow} indexColumn={indexColumn}/>
+      <BoxComponent box={box} indexRow={indexRow} indexColumn={indexColumn} />
     );
 
     const oBox = oMounted.find('.box');
-    oBox.simulate("click");
+    oBox.simulate('click');
     oMounted.update();
 
     expect(oBox).not.toBeNull();
   });
   test('Normal render and click into selected box', () => {
     const box: BoxType = {
-      letter: "A",
+      letter: 'A',
       clickeable: true,
       selected: true,
     };
@@ -36,18 +36,18 @@ describe('BoxComponent tests', () => {
     const indexColumn = 1;
 
     const oMounted = mount(
-      <BoxComponent box={box} indexRow={indexRow} indexColumn={indexColumn}/>
+      <BoxComponent box={box} indexRow={indexRow} indexColumn={indexColumn} />
     );
 
     const oBox = oMounted.find('.box');
-    oBox.simulate("click");
+    oBox.simulate('click');
     oMounted.update();
 
     expect(oBox).not.toBeNull();
   });
   test('Normal render and click into neighbor box', () => {
     const box: BoxType = {
-      letter: "A",
+      letter: 'A',
       clickeable: true,
       selected: false,
     };
@@ -55,11 +55,11 @@ describe('BoxComponent tests', () => {
     const indexColumn = 1;
 
     const oMounted = mount(
-      <BoxComponent box={box} indexRow={indexRow} indexColumn={indexColumn}/>
+      <BoxComponent box={box} indexRow={indexRow} indexColumn={indexColumn} />
     );
 
     const oBox = oMounted.find('.box');
-    oBox.simulate("click");
+    oBox.simulate('click');
     oMounted.update();
 
     expect(oBox).not.toBeNull();
@@ -70,15 +70,15 @@ test('Normal render with letters', () => {
     clickItem: jest.fn(),
     clearAll: jest.fn(),
   };
-  const stateMock:StateType = {
+  const stateMock: StateType = {
     board: GetBoardData(),
     dictionary: GetDictionary(),
-    letters: ["F", "A", "T"],
+    letters: ['F', 'A', 'T'],
     lastindexColumn: null,
     lastIndexRow: null,
-  }
+  };
   const box: BoxType = {
-    letter: "A",
+    letter: 'A',
     clickeable: true,
     selected: false,
   };
@@ -87,12 +87,12 @@ test('Normal render with letters', () => {
 
   const oMounted = mount(
     <BoardContext.Provider value={[stateMock, actionsMock]}>
-      <BoxComponent box={box} indexRow={indexRow} indexColumn={indexColumn}/>
+      <BoxComponent box={box} indexRow={indexRow} indexColumn={indexColumn} />
     </BoardContext.Provider>
   );
 
   const oBox = oMounted.find('.box');
-  oBox.simulate("click");
+  oBox.simulate('click');
   oMounted.update();
 
   expect(oBox).not.toBeNull();

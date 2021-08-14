@@ -61,7 +61,7 @@
   background: linear-gradient(#4f8cad, #457794);
 }
 
-@media (max-width: 460px) {
+@media (max-width: 480px) {
   .box {
     width: 60px;
     height: 60px;
@@ -75,15 +75,15 @@
   .selected {
     background: linear-gradient(#e8724e, #a52b2b);
   }
-  
+
   .selected > .text {
     background: linear-gradient(#e8724e, #a52b2b);
   }
-  
+
   .selected:hover {
     background: linear-gradient(#ca6343, #7e2121);
   }
-  
+
   .selected:hover > .text {
     background: linear-gradient(#ca6343, #7e2121);
   }
