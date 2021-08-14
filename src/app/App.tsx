@@ -1,12 +1,14 @@
-import BoxComponent from '../components/Box';
-import BoxContainer from '../components/BoxContainer';
+import { BoardContextProvider } from '../context/context';
+import { GetBoardData } from '../services/BoardService';
+
+import BoxContainer from '../components/BoxContainer/BoxContainer.component';
 
 function App() {
+  const board = GetBoardData();
   return (
-    <div>
-      Hola mundo
+    <BoardContextProvider board={board}>
       <BoxContainer />
-    </div>
+    </BoardContextProvider>
   );
 }
 

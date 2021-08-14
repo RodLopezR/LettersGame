@@ -1,10 +1,11 @@
 import Box from '../../types/BoxType';
 import BoxComponent from '../../components/Box';
+import { useContext } from 'react';
+import { BoardContext } from '../../context/context';
 import Styles from './BoxContainer.module.css';
-import { GetBoardData } from '../../services/BoardService';
 
 function BoxContainer() {
-  const board = GetBoardData();
+  const [{ board }] = useContext(BoardContext);
   return (
     <div className={Styles.container}>
       {board.items.map((fila, indexRow) => (
