@@ -1,0 +1,86 @@
+.box {
+  background: linear-gradient(#F4505E, #9E061B);
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.box:hover {
+  background: linear-gradient(#b43a44, #680210);
+  cursor: pointer;
+}
+
+.text {
+  background: linear-gradient(#F9CB57, #F68128);
+  height: 90px;
+  display: grid;
+  place-items: center center;
+  font-size: 70px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 6px gray;
+  border-radius: 7px;
+}
+
+.text:hover {
+  background: linear-gradient(#caa546, #c96a21);
+}
+
+.selected {
+  background: linear-gradient(#AFE84E, #5AA52B);
+}
+
+.selected > .text{
+  background: linear-gradient(#AFE84E, #5AA52B);
+}
+
+.selected:hover {
+  background: linear-gradient(#89b63c, #3e721d);
+}
+
+.selected:hover > .text {
+  background: linear-gradient(#89b63c, #3e721d);
+}
+
+.clickeable {
+  background: linear-gradient(#61AAD2, #5895B9);
+}
+
+.clickeable > .text{
+  background: linear-gradient(#61AAD2, #5895B9);
+}
+
+.clickeable:hover {
+  background: linear-gradient(#4f8cad, #457794);
+}
+
+.clickeable:hover > .text {
+  background: linear-gradient(#4f8cad, #457794);
+}
+
+@media (max-width: 460px) {
+  .box {
+    width: 60px;
+    height: 60px;
+    padding: 4px;
+  }
+  .text {
+    height: 60px;
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 336px) {
+  .box {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+  }
+  .text {
+    height: 40px;
+    font-size: 24px;
+  }
+}
