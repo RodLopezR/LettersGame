@@ -47,7 +47,7 @@ const ClearAll = (state: StateType): StateType => {
     });
   });
   newState.letters = [];
-  return { ...newState };
+  return newState;
 };
 
 export { ClickInBlock, ClearAll };
