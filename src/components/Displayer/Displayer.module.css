@@ -1,0 +1,52 @@
+.container {
+  width: 50%;
+  text-align: left;
+  display: inline-block;
+}
+
+.textBox {
+  border: 2px solid gray;
+  padding: 10px;
+  max-width: 400px;
+  position: relative;
+}
+
+.button {
+  color: gray;
+  width: 100px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.text {
+  display: inline-block;
+  color: green;
+}
+
+.validator {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #bac7ad;
+}
+
+.error {
+  color: red !important;
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+}
+
+@media (max-width: 460px) {
+  .container {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+}

@@ -1,22 +1,50 @@
-import { useReducer, createContext, FunctionComponent } from 'react';
+import { createContext, FunctionComponent, useState } from 'react';
+import { ClickInBlock, ClearAll as ClearAllFunction } from './filters';
+
 import BoardType from '../types/BoardType';
-import reducer from './reducer';
 import State, { StateType } from './state';
 
-export const BoardContext = createContext<[StateType, any]>([State, {}]);
-
-interface ContextProps {
+interface ContextProviderProps {
   board: BoardType;
 }
+interface ContextActionProps {
+  clickItem: (indexRow: number, indexColumn: number) => void;
+  clearAll: () => void;
+}
 
-export const BoardContextProvider: FunctionComponent<ContextProps> = ({
+export const BoardContext = createContext<[StateType, ContextActionProps]>([
+  State,
+  { clickItem: (a, b) => null, clearAll: () => null },
+]);
+
+export const BoardContextProvider: FunctionComponent<ContextProviderProps> = ({
   children,
   board,
 }) => {
   State.board = board;
-  const [state, dispatch] = useReducer(reducer, State);
+  const [state, setState] = useState(State);
+
+  const clickItem = (indexRow: number, indexColumn: number) => {
+    //Validations
+    if (indexColumn < 0 || indexColumn > 4 || indexRow < 0 || indexRow > 4) {
+      return;
+    }
+    if (
+      state.lastIndexRow === indexRow &&
+      state.lastindexColumn === indexColumn
+    ) {
+      return;
+    }
+
+    setState(ClickInBlock(state, indexRow, indexColumn));
+  };
+
+  const clearAll = () => {
+    setState(ClearAllFunction(state));
+  };
+
   return (
-    <BoardContext.Provider value={[state, dispatch]}>
+    <BoardContext.Provider value={[state, { clickItem, clearAll }]}>
       {children}
     </BoardContext.Provider>
   );

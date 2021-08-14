@@ -4,6 +4,7 @@ export interface StateType {
   board: BoardType;
   lastIndexRow: any;
   lastindexColumn: any;
+  letters: string[];
 }
 
 const State: StateType = {
@@ -12,6 +13,7 @@ const State: StateType = {
   },
   lastIndexRow: null,
   lastindexColumn: null,
+  letters: [],
 };
 
 export default State;

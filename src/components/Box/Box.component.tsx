@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import { FunctionComponent, useContext } from 'react';
-import { actionClickInBox } from '../../context/actions';
 import { BoardContext } from '../../context/context';
 import BoxType from '../../types/BoxType';
 import Styles from './Box.module.css';
@@ -16,11 +15,11 @@ const BoxComponent: FunctionComponent<BoxProps> = ({
   indexColumn,
   indexRow,
 }) => {
-  const [,dispatch] = useContext(BoardContext);
+  const [, { clickItem }] = useContext(BoardContext);
 
   const handleClickBox = () => {
     if (box.selected) return;
-    dispatch(actionClickInBox(indexRow, indexColumn));
+    clickItem(indexRow, indexColumn);
   };
 
   return (
