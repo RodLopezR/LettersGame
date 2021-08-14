@@ -1,5 +1,5 @@
 import { createContext, FunctionComponent, useState } from 'react';
-import { ClickInBlock, ClearAll as ClearAllFunction } from './filters';
+import { ClickInBlock, ClearAll as ClearAllFunction } from './actions';
 
 import BoardType from '../types/BoardType';
 import State, { StateType } from './state';

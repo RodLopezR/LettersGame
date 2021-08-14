@@ -15,11 +15,18 @@ const BoxComponent: FunctionComponent<BoxProps> = ({
   indexColumn,
   indexRow,
 }) => {
-  const [, { clickItem }] = useContext(BoardContext);
+  const [{ letters }, { clickItem }] = useContext(BoardContext);
 
   const handleClickBox = () => {
     if (box.selected) return;
-    clickItem(indexRow, indexColumn);
+
+    if (letters.length > 0) {
+      if (box.clickeable) {
+        clickItem(indexRow, indexColumn);
+      }
+    } else {
+      clickItem(indexRow, indexColumn);
+    }
   };
 
   return (
@@ -27,7 +34,10 @@ const BoxComponent: FunctionComponent<BoxProps> = ({
       className={clsx(
         Styles.box,
         'noSelectUI',
-        box.selected ? Styles.selected : ''
+        box.selected ? Styles.selected : '',
+        box.clickeable && !box.selected && letters.length > 0
+          ? Styles.clickeable
+          : ''
       )}
       onClick={handleClickBox}
     >
